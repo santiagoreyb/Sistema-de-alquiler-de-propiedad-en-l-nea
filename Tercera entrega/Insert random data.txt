@@ -1,0 +1,39 @@
+-- USUARIO
+insert into Usuario(nombre, contraseña)
+select
+dbms_random.string('A', 10) as nombre,
+dbms_random.string('A', 10) as contraseña
+from dual
+CONNECT BY LEVEL <= 10
+
+-- PROPIEDAD
+insert into Propiedad(idUsuario, nombre)
+select
+Usuario.id as idUsuario,
+dbms_random.string('A', 10) as nombre
+from Usuario
+
+-- RENTA
+insert into Renta(idPropiedad, fecha, numTarjetaCredito)
+select
+Propiedad.id as idPropiedad,
+to_date(trunc(dbms_random.value(2454467,2459581+364)),'J') as fecha,
+round(dbms_random.value(1,100000)) as numTarjetaCredito
+from Propiedad, dual
+CONNECT BY LEVEL <= 2
+
+-- SERVICIO
+insert into Servicio(nombre, precio, numInquilinos)
+select
+dbms_random.string('A', 10) as nombre,
+round(dbms_random.value(1,10000)) as precio,
+round(dbms_random.value(1,100)) as numInquilinos
+from dual
+CONNECT BY LEVEL <= 5
+
+-- SERVICIOPORRENTA
+insert into ServicioPorRenta(idServicio, idRenta)
+select
+Servicio.id as idServicio,
+Renta.id as idRenta
+from Servicio, Renta

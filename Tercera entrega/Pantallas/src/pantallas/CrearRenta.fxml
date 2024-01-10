@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="393.0" prefWidth="579.0" style="-fx-background-color: #4e97cf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pantallas.CrearRentaController">
+   <children>
+      <Label layoutX="221.0" layoutY="14.0" text="CREAR RENTA">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button layoutX="177.0" layoutY="342.0" mnemonicParsing="false" onAction="#BotonSeleccionar" text="SELECCIONAR" />
+      <Label layoutX="347.0" layoutY="308.0" text="TotalRenta">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <TextField fx:id="idtotalrenta" layoutX="331.0" layoutY="342.0" prefHeight="25.0" prefWidth="126.0" />
+      <TableView fx:id="TABLA" layoutX="33.0" layoutY="75.0" prefHeight="218.0" prefWidth="249.0">
+        <columns>
+          <TableColumn fx:id="ID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="NOMBRE" prefWidth="79.0" text="NOMBRE" />
+            <TableColumn fx:id="PRECIO" prefWidth="74.0" text="PRECIO" />
+        </columns>
+      </TableView>
+      <Label layoutX="33.0" layoutY="45.0" text="SERVICIOS">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="TABLA2" layoutX="307.0" layoutY="75.0" prefHeight="218.0" prefWidth="249.0">
+         <columns>
+            <TableColumn fx:id="ID2" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="NOMBRE2" prefWidth="79.0" text="NOMBRE" />
+            <TableColumn fx:id="PRECIO2" prefWidth="74.0" text="PRECIO" />
+         </columns>
+      </TableView>
+      <Label layoutX="307.0" layoutY="45.0" text="SERVICIOS ELEGIDOS">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idservicioelegido" layoutX="33.0" layoutY="342.0" prefHeight="25.0" prefWidth="126.0" />
+      <Label layoutX="33.0" layoutY="312.0" text="Inserte id servicio a elegir">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="486.0" layoutY="342.0" mnemonicParsing="false" onAction="#BotonLimpiar" text="LIMPIAR" />
+      <Button layoutX="33.0" layoutY="18.0" mnemonicParsing="false" onAction="#BotonVolver" text="Volver" />
+   </children>
+</AnchorPane>

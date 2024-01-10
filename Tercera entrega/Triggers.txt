@@ -1,0 +1,9 @@
+--Servicio
+
+CREATE OR REPLACE TRIGGER calcular_costo_servicio BEFORE
+UPDATE OF numInquilinos ON Servicio
+FOR EACH ROW
+WHEN (new.numInquilinos <> old.numInquilinos)
+BEGIN
+:new.costo :=  (:new.numInquilinos * :new.precio);
+END;
